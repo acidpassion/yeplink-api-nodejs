@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  yeplink-api-nodejs:
+    image: yeplink-api-nodejs
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3600:3600
+      - 9229:9229
+    command: node --inspect=0.0.0.0:9229 ./bin/www

@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  yeplink-api-nodejs:
+    env_file: .env
+    image: yeplink-api-nodejs
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3600:3600
