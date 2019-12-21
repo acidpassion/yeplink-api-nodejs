@@ -24,7 +24,7 @@ exports.bookList = [
 	auth,
 	function (req, res) {
 		try {
-			Book.find({user: req.user._id},"_id title description isbn createdAt").then((books)=>{
+			Book.find({user: req.user._id},'_id title description isbn createdAt').then((books)=>{
 				if(books.length > 0){
 					return apiResponse.successResponseWithData(res, "Operation success", books);
 				}else{

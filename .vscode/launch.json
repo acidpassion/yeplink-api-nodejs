@@ -1,11 +1,14 @@
 {
-    "configurations": [
-        {
-            "name": "Docker Node.js Launch and Attach",
-            "type": "docker",
-            "request": "launch",
-            "preLaunchTask": "docker-run: debug",
-            "platform": "node"
-        }
-    ]
+  "configurations": [
+    {
+      "name": "Launch via npm",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "debug"],
+      "envFile": "${workspaceFolder}/.env",
+      "port": 9229
+    }
+  ]
 }
